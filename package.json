@@ -1,0 +1,23 @@
+{
+  "name": "livepage-feedback-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/bot.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "author": "blibletype",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^1.2.0",
+    "@google-cloud/local-auth": "^2.1.0",
+    "axios": "^0.27.2",
+    "discord-api-types": "^0.37.11",
+    "discord.js": "^14.5.0",
+    "dotenv": "^16.0.2",
+    "googleapis": "^105.0.0",
+    "random-memes": "^3.1.7",
+    "sequelize": "^6.23.2",
+    "sqlite3": "^5.1.1"
+  }
+}
