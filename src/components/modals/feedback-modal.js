@@ -1,4 +1,8 @@
 const { EmbedBuilder } = require('discord.js');
+const { writeRow } = require("../../googleSreadsheetsAPI.js");
+require("dotenv").config();
+
+const { feedbackSpreadsheetId } = process.env;
 
 module.exports = {
   data: {
@@ -6,7 +10,6 @@ module.exports = {
   },
   async execute(interaction, client) {
     const feedback = interaction.fields.getTextInputValue("feedbackInput");
-    
     const re = new RegExp("feedback");
     const feedbackChannel = await interaction.guild.channels.cache.find(
       (channel) => {
@@ -32,6 +35,15 @@ module.exports = {
         content: "Дякуємо за ваш Feedback!!!",
         ephemeral: true,
       });
+
+      const timeElapsed = Date.now();
+      const today = new Date(timeElapsed);
+      const date = today.toLocaleDateString();
+      writeRow(
+        feedbackSpreadsheetId,
+        'Лист1!B2:C1000',
+        [[date, feedback]]
+      );
     }
   },
 };

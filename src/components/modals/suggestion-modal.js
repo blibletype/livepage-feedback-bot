@@ -1,4 +1,8 @@
 const { EmbedBuilder } = require("discord.js");
+const { writeRow } = require("../../googleSreadsheetsAPI.js");
+require("dotenv").config();
+
+const { suggestionSpreadsheetId } = process.env;
 
 module.exports = {
   data: {
@@ -32,6 +36,14 @@ module.exports = {
         content: "Дякуємо за пропозицію!",
         ephemeral: true,
       });
+      const timeElapsed = Date.now();
+      const today = new Date(timeElapsed);
+      const date = today.toLocaleDateString();
+      writeRow(
+        suggestionSpreadsheetId,
+        'Лист1!B2:D1000',
+        [[date, user, suggestion]]
+      );
     }
   },
 };

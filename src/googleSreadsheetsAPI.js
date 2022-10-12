@@ -12,7 +12,7 @@ module.exports = {
       auth,
       spreadsheetId,
       range: range,
-      valueInputOption: "RAW",
+      valueInputOption: "USER_ENTERED",
       resource: {
         values: values,
       },

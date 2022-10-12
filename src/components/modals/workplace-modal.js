@@ -1,5 +1,8 @@
 const { EmbedBuilder } = require("discord.js");
 const { writeRow } = require("../../googleSreadsheetsAPI.js");
+require("dotenv").config();
+
+const { workplaceSpreadsheetId } = process.env;
 
 module.exports = {
   data: {
@@ -40,10 +43,13 @@ module.exports = {
         ephemeral: true,
       });
 
+      const timeElapsed = Date.now();
+      const today = new Date(timeElapsed);
+      const date = today.toLocaleDateString();
       writeRow(
-        '1-eoLDkfJQY4f_4Mo9t_ZMyzMHKKkFGQULXe1AyQ4uaA',
-        'Аркуш1!A:B',
-        [[user, workplace]]
+        workplaceSpreadsheetId,
+        'Лист1!B2:D1000',
+        [[date, user, workplace]]
       );
     }
   },
