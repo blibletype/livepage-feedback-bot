@@ -1,4 +1,5 @@
 const { EmbedBuilder } = require("discord.js");
+const { writeRow } = require("../../googleSreadsheetsAPI.js");
 
 module.exports = {
   data: {
@@ -38,6 +39,12 @@ module.exports = {
         content: "Твій запит отримано, відповімо якнайшвидше!",
         ephemeral: true,
       });
+
+      writeRow(
+        '1-eoLDkfJQY4f_4Mo9t_ZMyzMHKKkFGQULXe1AyQ4uaA',
+        'Аркуш1!A:B',
+        [[user, workplace]]
+      );
     }
   },
 };
