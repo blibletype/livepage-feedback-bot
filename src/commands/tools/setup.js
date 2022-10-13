@@ -35,7 +35,7 @@ module.exports = {
       {
         name: "🕵️ | Анонімний фідбек",
         value:
-          ">>> Залиш анонімний фідбек про існуючі процеси. Ми завжди покращуємо їх, можливо ти допоможеш нам у цьому.",
+          ">>> Фідбек про існуючі процеси. Ми завжди покращуємо їх, можливо ти допоможеш нам у цьому.",
         inline: true,
       },
       {
@@ -73,27 +73,27 @@ module.exports = {
 
     const linkButton = new ButtonBuilder()
       .setCustomId("useful-links")
-      .setLabel("🔗123457891011121314")
+      .setLabel("🔗Посилання компанії")
       .setStyle(ButtonStyle.Success);
     const memButton = new ButtonBuilder()
       .setCustomId("random-meme")
-      .setLabel("🗿123457891011121314")
+      .setLabel("🗿Мем для настрою")
       .setStyle(ButtonStyle.Secondary);
     const whoCanHelpButton = new ButtonBuilder()
       .setCustomId("who-can-help")
-      .setLabel("🧑‍💼123457891011121314")
+      .setLabel("🧑‍💼До кого звернутись")
       .setStyle(ButtonStyle.Primary);
     const anonFeedbackButton = new ButtonBuilder()
       .setCustomId("anonimously-feedback")
-      .setLabel("🕵️‍♀️123457891011121314")
+      .setLabel("🕵️‍♀️Анононімний фідбек")
       .setStyle(ButtonStyle.Danger);
     const suggestionsButton = new ButtonBuilder()
       .setCustomId("suggestions")
-      .setLabel("💡123457891011121314")
+      .setLabel("💡Ідея для покращення")
       .setStyle(ButtonStyle.Primary);
     const problemsWithTechnicsButton = new ButtonBuilder()
       .setCustomId("problems-with-technics")
-      .setLabel("💻123457891011121314")
+      .setLabel("💻Техніка для роботи")
       .setStyle(ButtonStyle.Success);
 
     const buttonRow1 = new ActionRowBuilder().addComponents(
